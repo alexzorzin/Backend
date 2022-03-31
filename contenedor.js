@@ -117,7 +117,7 @@ async function getProductos() {
     try {
         const contenido = await fs.promises.readFile(`./producto.txt`, 'utf-8');
         let finalProducts = JSON.parse(contenido);
-        console.log("\nTodos los productos:"),
+        console.log("\nTIENDA ARGENTINA | CARRITO:"),
         console.log(finalProducts);
         app.get('/producto', (req, res) => {
             res.send({ contenido });
@@ -136,16 +136,16 @@ async function getProductosRandom() {
         const contenido = await fs.promises.readFile(`./producto.txt`, 'utf-8');
         let finalProducts = JSON.parse(contenido);
         
-        const productoAleatorio = finalProducts[Math.floor(Math.random() * finalProducts.length)];
-        console.log("\nProducto Aleatorio:")
-        console.log(productoAleatorio)
+        const productoRandom = finalProducts[Math.floor(Math.random() * finalProducts.length)];
+        console.log("\nSUERTE LOCA:")
+        console.log(productoRandom)
 
-        const productoAleatorioAUX = JSON.stringify(productoAleatorio)
+        const productoRandomAux = JSON.stringify(productoRandom)
 
         app.get('/productoRandom', (req, res) => {
-            res.send({ productoAleatorioAUX });
+            res.send({ productoRandomAux });
         });
-        return productoAleatorio;
+        return productoRandom;
     }
     catch (err) {
         throw new Error(err);
