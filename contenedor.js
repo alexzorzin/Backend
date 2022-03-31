@@ -155,7 +155,7 @@ setTimeout(() => { getProductosRandom() }, 500);
 
 
 const server = app.listen(8080, () => {
-    console.log('el server http está en el puerto 8080');
+    console.log('SERVIDOR HTTP ABIERTO EN EL PUERTO : 8080');
 });
 server.on('error', error => console.log(error));
 
