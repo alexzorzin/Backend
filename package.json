@@ -4,7 +4,9 @@
   "description": "",
   "main": "contenedor.js",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "multer": "^1.4.4",
+    "nodemon": "^2.0.15"
   },
   "devDependencies": {},
   "scripts": {

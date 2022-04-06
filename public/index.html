@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar nuevo producto</title>
+</head>
+
+<body>
+    <h1>BIENVENIDO A LA TIENDA ARGENTINA</h1>
+    <hr>
+    <h3>AGREGA UN NUEVO PRODUCTO AQUÍ:</h3>
+    <form action="/api/productos" method="POST">
+        Título: <input type="text" name="title">
+        Precio: <input type="number" name="price">
+        Thumbnail: <input type="text" name="thumbnail">
+        <button>Agregar al carrito</button>
+    </form>
+</body>
+
+</html>
