@@ -4,7 +4,7 @@ const socket = io.connect();
 function addProduct(e) {
   event.preventDefault();
   const product = {
-    name: document.getElementById('name').value,
+    title: document.getElementById('title').value,
     price: document.getElementById('price').value,
     thumbnail: document.getElementById('thumbnail').value,
   };

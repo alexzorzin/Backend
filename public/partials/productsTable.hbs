@@ -2,14 +2,14 @@
 <div class="table-responsive">
     <table class="table align-middle">
         <tr>
-            <th scope="col">name</th>
+            <th scope="col">Title</th>
             <th scope="col">Price</th>
             <th scope="col">Thumbnail</th>
         </tr>
         <tbody>
             {{#each products}}
             <tr>
-                <th class="col-5">{{this.name}}</th>
+                <th class="col-5">{{this.title}}</th>
                 <th class="col-4">$ {{this.price}}</th>
                 <th class="col"><img class="w-25" src="{{this.thumbnail}}" alt="{{this.name}} Thumbnail"></th>
             </tr>

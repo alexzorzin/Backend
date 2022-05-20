@@ -24,7 +24,7 @@ class sqlClient {
             .finally(() => {
                 return this.knex.schema.createTable('products', table => {
                     table.increments('id'),
-                        table.string('name'),
+                        table.string('title'),
                         table.float('price'),
                         table.string('thumbnail')
                 })
@@ -35,7 +35,7 @@ class sqlClient {
         return this.knex(this.tabla).insert(e);
     }
 
-    async readProducts() {
+    async readAll() {
         return this.knex.from(this.tabla).select('*');
     }
 

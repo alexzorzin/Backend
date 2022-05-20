@@ -27,7 +27,7 @@ const knex = require("knex")(config.mariaDB);
             .dropTableIfExists("products")
             .createTable("products", (table) => {
                 table.increments("id");
-                table.string("name").notNullable();
+                table.string("title").notNullable();
                 table.float("price");
                 table.string("thumbnail").notNullable();
             });

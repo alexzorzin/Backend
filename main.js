@@ -15,9 +15,20 @@ app.get('/', (req, res) => {
 });
 
 const config = require("./options/config");
+
 const sqlClient = require("./container/sql");
-const messagesApi = new sqlClient(config.sqlite3, "messages");
-const productsApi = new sqlClient(config.mariaDB, "products");
+const firebaseClient = require("./container/firebase")
+const mongoClient = require("./container/mongo")
+
+// MENSAJES
+// const messagesApi = new sqlClient(config.sqlite3, "messages");
+// const messagesApi = new mongoClient(config.mongooseMessages,"messages");
+const messagesApi = new firebaseClient(config.firebase,"messages");
+
+// PRODUCTOS
+// const productsApi = new sqlClient(config.mariaDB, "products");
+// const productsApi = new mongoClient(config.mongooseProducts,"products");
+const productsApi = new firebaseClient(config.firebase,"products");
 
 // sqlite
 
@@ -27,7 +38,7 @@ const messages = []
 const lastMessage = async () => {
     try {
         if (messages.length == 0) {
-            messages.push(await messagesApi.readProducts())
+            messages.push(await messagesApi.readAll())
         }
         else {
             await messagesApi.createMessagesTable()
@@ -47,13 +58,13 @@ const products = []
 const lastProduct = async () => {
     try {
         if (products.length == 0) {
-            products.push(await productsApi.readProducts())
+            products.push(await productsApi.readAll())
             console.log(await products[0])
         }
         else {
             await productsApi.createProductsTable()
             await productsApi.addElements(products)
-            console.log(await productsApi.readProducts())
+            console.log(await productsApi.readAll())
         }
 
     }
@@ -67,7 +78,7 @@ lastProduct()
 
 //leer los productos
 app.get("/productos", async function (req, res) {
-    res.json(await productsApi.readProducts());
+    res.json(await productsApi.readAll());
 });
 
 //Añadir producto
