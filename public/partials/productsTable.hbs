@@ -1,4 +1,4 @@
-{{#if productos.length}}
+{{#if products.length}}
 <div class="table-responsive">
     <table class="table align-middle">
         <tr>
@@ -7,11 +7,11 @@
             <th scope="col">Thumbnail</th>
         </tr>
         <tbody>
-            {{#each productos}}
+            {{#each products}}
             <tr>
                 <th class="col-5">{{this.title}}</th>
                 <th class="col-4">$ {{this.price}}</th>
-                <th class="col"><img class="w-25" src="{{this.thumbnail}}" alt="{{this.title}} Thumbnail"></th>
+                <th class="col"><img class="w-25" src="{{this.thumbnail}}" alt="{{this.name}} Thumbnail"></th>
             </tr>
             {{/each}}
         </tbody>
