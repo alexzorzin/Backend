@@ -12,13 +12,13 @@ Levantar el server en un puerto como el 8081 y de url escribir: 127.0.0.1:8081/i
 
     nodemon src/index.js -p 8081 -m FORK  // ese FORK no es necesario porque viene por default
 
-## 3) FOREVER
+## 3) forever:
 1) Inicio en modo FORK en puerto 8081:
     forever src/index.js -p 8081
 2) Inicio en modo CLUSTER en puerto 8082:
     forever src/index.js -m CLUSTER -p 8082  
 
-## 4) NGINX
+## 4) nginx:
 
 1) Inicio 4 conexiones en modo FORK - watch:
 
