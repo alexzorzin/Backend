@@ -1,0 +1,26 @@
+         <table class="table align-middle container">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Thumbnail</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <% for (const product of products) {%>
+                <tbody>
+                    <tr>
+                        <td>
+                            <%=product.title%>
+                        </td>
+                        <td>$ <%=product.price%>
+                        </td>
+                        <td><img width="70" src=<%=product.thumbnail%>></td>
+                        <td onclick="addToCart(id, <%=product.price%>)" id=<%=product.title%> value=<%=product.price%>
+                                class="add-cart col-2">
+                                <span>Agregar al Carrito</span>
+                        </td>
+                    </tr>
+                </tbody>
+                <%};%>
+        </table>

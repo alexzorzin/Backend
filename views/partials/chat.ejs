@@ -1,0 +1,54 @@
+<div id="messages">
+        <% for (const message of chat) {%>
+            <div class="row my-2">
+                <p class="author col"><%=message.author%> : <span class="text"><%=message.text%></span> </p>
+            </div>
+            <%};%>
+    </div>
+    
+<form class="card card-5 container mt-5">
+    <h3>Chat</h3>
+    <div class="form-group">
+        <label for="id">Email</label>
+        <input id="id" class="form-control" type="text" name="id" required>
+    </div>
+
+    <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input id="nombre" class="form-control" type="text" step="0.01" name="nombre" required>
+    </div>
+
+    <div class="form-group">
+        <label for="apellido">Apellido</label>
+        <input id="apellido" class="form-control" type="text" step="0.01" name="apellido" required>
+    </div>
+
+    <div class="form-group">
+        <label for="alias">Alias</label>
+        <input id="alias" class="form-control" type="text" step="0.01" name="alias" required>
+    </div>
+
+    <div class="form-group">
+        <label for="edad">Edad</label>
+        <input id="edad" class="form-control" type="text" step="0.01" name="edad" required>
+    </div>
+<!-- 
+    <div class="form-group">
+        <label for="avatar">Avatar</label>
+        <input id="avatar" class="form-control" type="text" step="0.01" name="avatar" required>
+    </div> -->
+
+    <div class="form-group">
+        <label for="date">Fecha</label>
+        <input id="date" class="form-control" type="datetime" name="date" autocomplete="on">
+    </div>
+
+    <div class="form-group">
+        <label for="text">MENSAJE</label>
+        <input id="text" class="form-control" type="text" name="text">
+    </div>
+
+    <div>
+        <button id="send" class="fs-6 my-3 btn btn-info rounded-pill" type="submit">Enviar</button>
+    </div>
+</form>
